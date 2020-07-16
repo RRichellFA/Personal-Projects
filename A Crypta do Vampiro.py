@@ -3,9 +3,9 @@ from time import sleep
 print("""
 Projeto do jogo "A Crypta do Vampiro"
 Escrito por Steve Jackson e Ian Livingstone
-Este é um projeto didático e não estará disponível para venda, apoie a obra original!
+\033[31mEste é um projeto didático e não estará disponível para distribuição, apoie a obra original!\033[m
 """)
-sleep(3)
+sleep(5)
 
 print('='*5, 'Criação do personagem', '='*5)
 print("""
