@@ -1,5 +1,5 @@
 from time import sleep
-from funções import dice
+from RollDices import dice
 print("""
 Projeto do jogo "A Crypta do Vampiro"
 Escrito por Steve Jackson e Ian Livingstone
