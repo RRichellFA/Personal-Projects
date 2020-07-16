@@ -1,6 +1,7 @@
 import PySimpleGUI as sg
 from random import randint as dice
 
+
 class Ficha:
     def __init__(self):
         # Layout
@@ -15,6 +16,7 @@ class Ficha:
             [sg.Text('Jogue 1 dado e some 3,\nEste será seu valor de Fé.')],
             [sg.Text('Fé:', size=(12, 0)), sg.Input(dice(1, 6) + 3, key='fe', size=(15, 0))],
             [sg.Button('Enviar dados')],
+            [sg.Text('Log de mudanças.')],
             [sg.Output(size=(24, 6))]
         ]
         # Janela
