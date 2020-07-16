@@ -5,7 +5,6 @@ from random import randint as dice
 class Ficha:
     def __init__(self):
         sg.change_look_and_feel('Reds')
-        # Layout
         layout = [
             [sg.Text('Nome:', size=(12, 0)), sg.Input(size=(15, 0), key='no')],
             [sg.Text('Jogue 1 dado e some 6,\nEste será seu valor de Habilidade.')],
@@ -20,12 +19,10 @@ class Ficha:
             [sg.Text('Log de mudanças.')],
             [sg.Output(size=(24, 6))]
         ]
-        # Janela
         self.janela = sg.Window('Ficha').layout(layout)
 
     def Iniciar(self):
         while True:
-            # Extrair Dados da janela
             self.button, self.values = self.janela.Read()
             Nome = self.values['no']
             Habilidade = self.values['ha']
