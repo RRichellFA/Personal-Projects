@@ -4,6 +4,7 @@ from random import randint as dice
 
 class Ficha:
     def __init__(self):
+        sg.change_look_and_feel('Reds')
         # Layout
         layout = [
             [sg.Text('Nome:', size=(12, 0)), sg.Input(size=(15, 0), key='no')],
