@@ -12,7 +12,7 @@ class Ficha:
             [sg.Text('Sorte:', size=(12, 0)), sg.Input(dice(1, 6) + 6, key='so', size=(15, 0))],
             [sg.Text('Fé:', size=(12, 0)), sg.Input(dice(1, 6) + 3, key='fe', size=(15, 0))],
             [sg.Text('Provisões:', size=(12, 0)), sg.Slider(range=(0, 15), default_value=0, orientation='h', size=(15, 15), key='pro')],
-            [sg.Button('Enviar dados')],
+            [sg.Button('Atualizar')],
             [sg.Text('Equipamento.')],
             [sg.Checkbox('1:', key='I1'), sg.Input(size=(24, 10), default_text='Arma', key='i1')],
             [sg.Checkbox('2:', key='I2'), sg.Input(size=(24, 10), default_text='Escudo', key='i2')],
@@ -20,7 +20,7 @@ class Ficha:
             [sg.Checkbox('4:', key='I4'), sg.Input(size=(24, 10), default_text='Jóia', key='i4')],
             [sg.Checkbox('5:', key='I5'), sg.Input(size=(24, 10), default_text='Encantamento', key='i5')],
             [sg.Text('Log de mudanças.', size=(24, 0))],
-            [sg.Output(size=(30, 15))]
+            [sg.Output(size=(30, 12))]
         ]
         self.janela = sg.Window('Ficha').layout(layout)
 
@@ -38,6 +38,7 @@ class Ficha:
             i3 = self.values['i3']
             i4 = self.values['i4']
             i5 = self.values['i5']
+            print('\n\n\n\n\n\n')
             print(f'Nome: {Nome}')
             print(f'Habilidade: {Habilidade}')
             print(f'Energia: {Energia}')
