@@ -14,11 +14,11 @@ class Ficha:
             [sg.Text('Provisões:', size=(12, 0)), sg.Slider(range=(0, 15), default_value=0, orientation='h', size=(15, 15), key='pro')],
             [sg.Button('Enviar dados')],
             [sg.Text('Equipamento.')],
-            [sg.Text('1:'), sg.Input(size=(24, 10), default_text='Arma', key='i1')],
-            [sg.Text('2:'), sg.Input(size=(24, 10), default_text='Escudo', key='i2')],
-            [sg.Text('3:'), sg.Input(size=(24, 10), default_text='Armadura', key='i3')],
-            [sg.Text('4:'), sg.Input(size=(24, 10), default_text='Jóia', key='i4')],
-            [sg.Text('5:'), sg.Input(size=(24, 10), default_text='Encantamento', key='i5')],
+            [sg.Checkbox('1:', key='I1'), sg.Input(size=(24, 10), default_text='Arma', key='i1')],
+            [sg.Checkbox('2:', key='I2'), sg.Input(size=(24, 10), default_text='Escudo', key='i2')],
+            [sg.Checkbox('3:', key='I3'), sg.Input(size=(24, 10), default_text='Armadura', key='i3')],
+            [sg.Checkbox('4:', key='I4'), sg.Input(size=(24, 10), default_text='Jóia', key='i4')],
+            [sg.Checkbox('5:', key='I5'), sg.Input(size=(24, 10), default_text='Encantamento', key='i5')],
             [sg.Text('Log de mudanças.', size=(24, 0))],
             [sg.Output(size=(30, 15))]
         ]
@@ -43,12 +43,18 @@ class Ficha:
             print(f'Energia: {Energia}')
             print(f'Sorte: {Sorte}')
             print(f'Fé: {Fe}')
-            print(f'Provisões: {Provisoes:.0f}')
-            print(f'Item 1: {i1}')
-            print(f'Item 2: {i2}')
-            print(f'Item 3: {i3}')
-            print(f'Item 4: {i4}')
-            print(f'Item 5: {i5}')
+            if Provisoes > 0:
+                print(f'Provisões: {Provisoes:.0f}')
+            if self.values['I1']:
+                print(f'Item: {i1}')
+            if self.values['I2']:
+                print(f'Item: {i2}')
+            if self.values['I3']:
+                print(f'Item: {i3}')
+            if self.values['I4']:
+                print(f'Item: {i4}')
+            if self.values['I5']:
+                print(f'Item: {i5}')
 
 
 tela = Ficha()
